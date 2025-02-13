@@ -49,40 +49,116 @@ function Playerone2 () {
     splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.TopLeft)
 }
 info.onCountdownEnd(function () {
-    info.startCountdown(30)
     if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
+            if (controller.player1.isPressed(ControllerButton.A)) {
+                projectile = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . 4 4 4 5 5 4 4 4 . . . . 
+                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
+                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
+                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
+                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
+                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
+                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
+                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
+                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
+                    . . . . 4 4 2 2 2 2 4 4 . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, Playerone, randint(-50, 50), randint(-50, 50))
+            } else if (controller.player2.isPressed(ControllerButton.A)) {
+                projectile = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . 4 4 4 5 5 4 4 4 . . . . 
+                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
+                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
+                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
+                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
+                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
+                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
+                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
+                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
+                    . . . . 4 4 2 2 2 2 4 4 . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, Playertwo, randint(-50, 50), randint(-50, 50))
+            } else if (controller.player3.isPressed(ControllerButton.A)) {
+                projectile = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . 4 4 4 5 5 4 4 4 . . . . 
+                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
+                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
+                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
+                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
+                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
+                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
+                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
+                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
+                    . . . . 4 4 2 2 2 2 4 4 . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, Playerthree, randint(-50, 50), randint(-50, 50))
+            } else if (controller.player4.isPressed(ControllerButton.A)) {
+                projectile = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . 4 4 4 5 5 4 4 4 . . . . 
+                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
+                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
+                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
+                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
+                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
+                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
+                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
+                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
+                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
+                    . . . . 4 4 2 2 2 2 4 4 . . . . 
+                    . . . . . . 4 4 4 4 . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, Playerfour, randint(-50, 50), randint(-50, 50))
+            }
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() != 0) {
         	
         }
     } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     } else {
-        while (info.countdown() == 0) {
+        while (info.countdown() != 0) {
         	
         }
     }
+    info.startCountdown(15)
 })
 function Playerfour2 () {
     Playerfour = sprites.create(img`
@@ -152,10 +228,11 @@ function Playerthree2 () {
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Playerthree)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 }
-let Playerthree: Sprite = null
 let statusbar2: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let Playerfour: Sprite = null
+let Playerthree: Sprite = null
+let projectile: Sprite = null
 let statusbar: StatusBarSprite = null
 let Playerone: Sprite = null
 let statusbar4: StatusBarSprite = null
@@ -167,4 +244,4 @@ namespace userconfig {
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`niveau2`)
 PlayerDeploy()
-info.startCountdown(30)
+info.startCountdown(5)
