@@ -21,7 +21,6 @@ function Playertwo2 () {
     statusbar4 = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar4.attachToSprite(Playertwo)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Playertwo)
-    splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
 }
 function Playerone2 () {
     Playerone = sprites.create(img`
@@ -46,118 +45,8 @@ function Playerone2 () {
     statusbar = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar.attachToSprite(Playerone)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Playerone)
-    splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.TopLeft)
 }
 info.onCountdownEnd(function () {
-    if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-            if (controller.player1.isPressed(ControllerButton.A)) {
-                projectile = sprites.createProjectileFromSprite(img`
-                    . . . . . . . . . . . . . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . 4 4 4 5 5 4 4 4 . . . . 
-                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
-                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
-                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
-                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
-                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
-                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
-                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
-                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
-                    . . . . 4 4 2 2 2 2 4 4 . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . . . . . . . . . . . . . 
-                    `, Playerone, randint(-50, 50), randint(-50, 50))
-            } else if (controller.player2.isPressed(ControllerButton.A)) {
-                projectile = sprites.createProjectileFromSprite(img`
-                    . . . . . . . . . . . . . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . 4 4 4 5 5 4 4 4 . . . . 
-                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
-                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
-                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
-                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
-                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
-                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
-                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
-                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
-                    . . . . 4 4 2 2 2 2 4 4 . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . . . . . . . . . . . . . 
-                    `, Playertwo, randint(-50, 50), randint(-50, 50))
-            } else if (controller.player3.isPressed(ControllerButton.A)) {
-                projectile = sprites.createProjectileFromSprite(img`
-                    . . . . . . . . . . . . . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . 4 4 4 5 5 4 4 4 . . . . 
-                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
-                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
-                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
-                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
-                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
-                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
-                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
-                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
-                    . . . . 4 4 2 2 2 2 4 4 . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . . . . . . . . . . . . . 
-                    `, Playerthree, randint(-50, 50), randint(-50, 50))
-            } else if (controller.player4.isPressed(ControllerButton.A)) {
-                projectile = sprites.createProjectileFromSprite(img`
-                    . . . . . . . . . . . . . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . 4 4 4 5 5 4 4 4 . . . . 
-                    . . . 3 3 3 3 4 4 4 4 4 4 . . . 
-                    . . 4 3 3 3 3 2 2 2 1 1 4 4 . . 
-                    . . 3 3 3 3 3 2 2 2 1 1 5 4 . . 
-                    . 4 3 3 3 3 2 2 2 2 2 5 5 4 4 . 
-                    . 4 3 3 3 2 2 2 4 4 4 4 5 4 4 . 
-                    . 4 4 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . 4 2 3 3 2 2 4 4 4 4 4 4 4 4 . 
-                    . . 4 2 3 3 2 4 4 4 4 4 2 4 . . 
-                    . . 4 2 2 3 2 2 4 4 4 2 4 4 . . 
-                    . . . 4 2 2 2 2 2 2 2 2 4 . . . 
-                    . . . . 4 4 2 2 2 2 4 4 . . . . 
-                    . . . . . . 4 4 4 4 . . . . . . 
-                    . . . . . . . . . . . . . . . . 
-                    `, Playerfour, randint(-50, 50), randint(-50, 50))
-            }
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else if (Math.percentChance(12.5)) {
-        while (info.countdown() != 0) {
-        	
-        }
-    } else {
-        while (info.countdown() != 0) {
-        	
-        }
-    }
     info.startCountdown(15)
 })
 function Playerfour2 () {
@@ -196,13 +85,13 @@ function Playerfour2 () {
 function PlayerDeploy () {
     Playerone2()
     Playertwo2()
-    Playerthree2()
-    Playerfour2()
     statusbar.setBarBorder(1, 15)
-    statusbar2.setBarBorder(1, 15)
-    statusbar3.setBarBorder(1, 15)
     statusbar4.setBarBorder(1, 15)
 }
+controller.player4.onEvent(ControllerEvent.Connected, function () {
+    Playerfour2()
+    statusbar3.setBarBorder(1, 15)
+})
 function Playerthree2 () {
     Playerthree = sprites.create(img`
         . . . . . f f 4 4 f f . . . . . 
@@ -227,12 +116,17 @@ function Playerthree2 () {
     statusbar2.attachToSprite(Playerthree)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Playerthree)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
+    splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.TopLeft)
+    splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
 }
+controller.player3.onEvent(ControllerEvent.Connected, function () {
+    Playerthree2()
+    statusbar2.setBarBorder(1, 15)
+})
 let statusbar2: StatusBarSprite = null
+let Playerthree: Sprite = null
 let statusbar3: StatusBarSprite = null
 let Playerfour: Sprite = null
-let Playerthree: Sprite = null
-let projectile: Sprite = null
 let statusbar: StatusBarSprite = null
 let Playerone: Sprite = null
 let statusbar4: StatusBarSprite = null
