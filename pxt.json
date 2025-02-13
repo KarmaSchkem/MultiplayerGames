@@ -3,12 +3,18 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "arcade-split-screen": "github:riknoll/arcade-split-screen#pr-1",
+        "sprite-scaling": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.2.1"
     },
     "files": [
         "README.md",
         "main.blocks",
-        "main.ts"
+        "main.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
