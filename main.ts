@@ -18,7 +18,7 @@ function Playertwo2 () {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     controller.player2.moveSprite(Playertwo)
-    statusbar4 = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar4 = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar4.attachToSprite(Playertwo)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Playertwo)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.TopRight)
@@ -43,11 +43,47 @@ function Playerone2 () {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     controller.moveSprite(Playerone)
-    statusbar = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar.attachToSprite(Playerone)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Playerone)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.TopLeft)
 }
+info.onCountdownEnd(function () {
+    info.startCountdown(30)
+    if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else if (Math.percentChance(12.5)) {
+        while (info.countdown() == 0) {
+        	
+        }
+    } else {
+        while (info.countdown() == 0) {
+        	
+        }
+    }
+})
 function Playerfour2 () {
     Playerfour = sprites.create(img`
         ........................
@@ -76,7 +112,7 @@ function Playerfour2 () {
         ........................
         `, SpriteKind.Player)
     controller.player4.moveSprite(Playerfour)
-    statusbar3 = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar3 = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar3.attachToSprite(Playerfour)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, Playerfour)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera4, splitScreen.CameraRegion.BottomRight)
@@ -86,6 +122,10 @@ function PlayerDeploy () {
     Playertwo2()
     Playerthree2()
     Playerfour2()
+    statusbar.setBarBorder(1, 15)
+    statusbar2.setBarBorder(1, 15)
+    statusbar3.setBarBorder(1, 15)
+    statusbar4.setBarBorder(1, 15)
 }
 function Playerthree2 () {
     Playerthree = sprites.create(img`
@@ -107,13 +147,13 @@ function Playerthree2 () {
         . . . . . f f b b f f . . . . . 
         `, SpriteKind.Player)
     controller.player3.moveSprite(Playerthree)
-    statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
+    statusbar2 = statusbars.create(30, 4, StatusBarKind.Health)
     statusbar2.attachToSprite(Playerthree)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Playerthree)
     splitScreen.setCameraRegion(splitScreen.Camera.Camera3, splitScreen.CameraRegion.BottomLeft)
 }
-let statusbar2: StatusBarSprite = null
 let Playerthree: Sprite = null
+let statusbar2: StatusBarSprite = null
 let statusbar3: StatusBarSprite = null
 let Playerfour: Sprite = null
 let statusbar: StatusBarSprite = null
@@ -127,3 +167,4 @@ namespace userconfig {
 scene.setBackgroundColor(6)
 tiles.setCurrentTilemap(tilemap`niveau2`)
 PlayerDeploy()
+info.startCountdown(30)
